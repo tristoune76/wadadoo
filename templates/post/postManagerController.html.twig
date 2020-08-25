@@ -1,0 +1,12 @@
+{# template/post/postManagerController.html.twig #}
+
+{% extends "layout.html.twig" %}
+
+{% block mainBlock %}
+    {# First block where takes place actions about post (Read, write, edit, delete) #}
+    <div id = "postAction" class = "row">{% block postAction %}{% endblock %}</div>
+    
+    {# Second block where we display the last three posts) #}
+    <div id = "lastPosts" class = "row">{{ render(controller("postManagerController:readThree" , {'limit' : 3})) }}</div>
+{% endblock %}
+
